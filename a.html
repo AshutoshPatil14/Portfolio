@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashutosh Patil | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #0f172a, #1e293b);
+      color: #f8fafc;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(56,189,248,0.1), transparent 70%), radial-gradient(circle at 70% 30%, rgba(255,255,255,0.05), transparent 50%);
+      z-index: 0;
+      animation: bgPulse 10s infinite ease-in-out;
+    }
+    @keyframes bgPulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+    header, section, footer {
+      padding: 2rem;
+      max-width: 960px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+    h1, h2 { color: #38bdf8; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: fadeInDown 1s ease-out;
+    }
+    nav a {
+      color: #f8fafc;
+      text-decoration: none;
+      margin-left: 1rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -3px;
+      background-color: #38bdf8;
+      transition: width 0.3s;
+    }
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: #38bdf8; transform: scale(1.05); }
+    .section-title {
+      margin-top: 2rem;
+      border-bottom: 2px solid #334155;
+      padding-bottom: 0.5rem;
+      font-size: 1.8rem;
+    }
+    ul { list-style: none; padding-left: 1rem; }
+    ul li::before { content: '• '; color: #38bdf8; }
+    .dropdown {
+      background: #1e293b;
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .dropdown:hover {
+      box-shadow: 0 6px 20px rgba(56,189,248,0.3);
+      transform: scale(1.02);
+    }
+    .dropdown-content {
+      display: none;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #334155;
+      border-radius: 10px;
+    }
+    .dropdown.active .dropdown-content {
+      display: block;
+      animation: fadeInDown 0.5s ease-in-out;
+    }
+    .resume-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      background-color: #38bdf8;
+      color: #0f172a;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s;
+    }
+    .resume-button:hover {
+      background-color: #0ea5e9;
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin-top: 2rem;
+    }
+    .wave {
+      position: fixed;
+      width: 100%;
+      height: 200px;
+      bottom: 0;
+      left: 0;
+      background: url('https://svgshare.com/i/xnY.svg') no-repeat center;
+      background-size: cover;
+      z-index: 1;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+    <header>
+      <nav>
+        <h1><i class="fas fa-code"></i> Ashutosh Patil</h1>
+        <div>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#certs">Certifications</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+  
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p>I am an IT professional with a strong software development and artificial intelligence foundation, holding B.Sc. and M.Sc. degrees in Information Technology. I have experience in Python, C++, Java, and hands-on AI projects like an Image Caption Generator and Antivirus Software. I'm passionate about tech, cars, and mechanics.</p>
+    </section>
+  
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <ul>
+        <li>Languages: Python, Java, C++, SQL</li>
+        <li>Tools: Power BI, Tableau, UIPath, VS Code</li>
+        <li>Concepts: Generative AI, RPA, Data Visualization</li>
+      </ul>
+    </section>
+  
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="dropdown">
+        <strong>Image Caption Generator</strong>
+        <div class="dropdown-content">
+          <p>Used Python, Keras, and sklearn to create a Windows app that generates captions for images.</p>
+        </div>
+      </div>
+      <div class="dropdown">
+        <strong>Antivirus Software</strong>
+        <div class="dropdown-content">
+          <p>Developed lightweight Antivirus in C# and Visual Basic for machines with limited resources.</p>
+        </div>
+      </div>
+      <div class="dropdown">
+        <strong>Music Using Neural Networks</strong>
+        <div class="dropdown-content">
+          <p>Used Keras, Music21, and LSTM to train on MIDI files and generate AI-composed music. Project includes music parsing, training, prediction, and MP3 export.</p>
+        </div>
+      </div>
+    </section>
+  
+    <section id="certs">
+      <h2 class="section-title">Certifications</h2>
+      <div class="dropdown"><strong>HP Enterprise Software Engineering Simulation (Forage)</strong><div class="dropdown-content"><p>Completed a practical simulation covering core software development workflows and problem-solving techniques.</p></div></div>
+      <div class="dropdown"><strong>Deloitte Technology Simulation (Forage)</strong><div class="dropdown-content"><p>Participated in a virtual project simulating technology consulting practices and data-driven problem solving.</p></div></div>
+      <div class="dropdown"><strong>Accenture Data Analytics (Forage)</strong><div class="dropdown-content"><p>Completed a simulation in data cleaning, dashboarding, and data storytelling for a business client.</p></div></div>
+      <div class="dropdown"><strong>EA Software Engineering (Forage)</strong><div class="dropdown-content"><p>Simulated real-world software engineering tasks with EA's tech teams and best practices.</p></div></div>
+      <div class="dropdown"><strong>Goldman Sachs Governance Simulation (Forage)</strong><div class="dropdown-content"><p>Learned key aspects of governance, ethics, and decision-making within a corporate framework.</p></div></div>
+      <div class="dropdown"><strong>Infosys Springboard Python Programming Certificate</strong><div class="dropdown-content"><p>Completed Python programming training on Infosys Springboard, covering fundamentals, functions, OOPs, and file handling.</p></div></div>
+    </section>
+  
+    <section id="resume">
+      <h2 class="section-title">Resume</h2>
+      <p>You can view or download my resume here:</p>
+      <a href="https://drive.google.com/file/d/1NXRv2xMf02-hnKiKkKzeY9AbyLU9ItZR/view?usp=sharing" target="_blank" class="resume-button">View Resume (PDF)</a>
+      <a href="https://drive.google.com/uc?export=download&id=1NXRv2xMf02-hnKiKkKzeY9AbyLU9ItZR" class="resume-button" style="margin-left: 1rem;">Download Resume</a>
+    </section>
+  
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p>Email: <a href="mailto:ashutosh.patil1409@gmail.com">ashutosh.patil1409@gmail.com</a></p>
+      <p>Phone: +91 91307 47809</p>
+      <p><a href="https://linkedin.com/in/ashutosh-patil-556518191" target="_blank">LinkedIn</a> | <a href="https://github.com/AshutoshPatil14" target="_blank">GitHub</a></p>
+    </section>
+  
+    <div class="wave"></div>
+  
+    <footer>
+      &copy; 2025 Ashutosh Patil. All rights reserved.
+    </footer>
+  
+    <script>
+      ScrollReveal().reveal('section', {
+        origin: 'bottom',
+        distance: '40px',
+        duration: 1000,
+        reset: false,
+        delay: 100
+      });
+  
+      document.querySelectorAll('.dropdown').forEach(drop => {
+        drop.addEventListener('click', () => {
+          drop.classList.toggle('active');
+        });
+      });
+    </script>
+  </body>
+</html>
