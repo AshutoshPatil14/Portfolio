@@ -25,7 +25,7 @@ const About = () => {
             make meaningful contributions in dynamic, innovative settings.
           </p>
           <div className="resume-link">
-            <a href="https://drive.google.com/file/d/1AoY_trAKW9Dk7sQYXIJv_gxb-mY9Ygl_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn">
+            <a href="https://drive.usercontent.google.com/u/0/uc?id=1AoY_trAKW9Dk7sQYXIJv_gxb-mY9Ygl_&export=download" target="_blank" rel="noopener noreferrer" className="btn">
               Download Resume
             </a>
           </div>
