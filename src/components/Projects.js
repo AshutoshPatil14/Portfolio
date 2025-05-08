@@ -38,9 +38,9 @@ const Projects = () => {
       <div className="projects-grid">
         {projects.map((project) => (
           <div className="project-card" key={project.id}>
-            <div className="project-image">
+            {/* <div className="project-image">
               <img src={project.image} alt={project.title} />
-            </div>
+            </div> */}
             <div className="project-info">
               <h3>{project.title}</h3>
               <p>{project.description}</p>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,13 +22,27 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormStatus({ submitting: true, submitted: false, error: null });
-    
-    // Here you would typically send the form data to a backend service
-    // For now, let's simulate a successful submission
-    setTimeout(() => {
+
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message
+    };
+
+    emailjs.send(
+      'service_wulijue',       // Replace with your actual EmailJS service ID
+      'template_bhoagof',      // Replace with your actual EmailJS template ID
+      templateParams,
+      'C9pqjgsrCsEbFZtGQ'        // Replace with your actual EmailJS public key
+    )
+    .then(() => {
       setFormStatus({ submitting: false, submitted: true, error: null });
       setFormData({ name: '', email: '', message: '' });
-    }, 1500);
+    })
+    .catch((error) => {
+      setFormStatus({ submitting: false, submitted: false, error: 'Failed to send message. Please try again later.' });
+      console.error('EmailJS Error:', error.text);
+    });
   };
 
   return (

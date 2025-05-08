@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: 
+        radial-gradient(circle at 80% 10%, rgba(94, 114, 235, 0.1) 0%, rgba(94, 114, 235, 0) 20%),
+        radial-gradient(circle at 10% 70%, rgba(209, 122, 255, 0.1) 0%, rgba(209, 122, 255, 0) 30%);
+    }
+    
+    .email-container {
+      max-width: 650px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .pattern-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, #6366F1, #8B5CF6, #D946EF);
+      z-index: 2;
+    }
+    
+    .email-header {
+      padding: 25px 30px;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #ffffff;
+      position: relative;
+    }
+    
+    .email-header:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 5px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+    }
+    
+    .email-subject {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #333;
+      display: flex;
+      align-items: center;
+    }
+    
+    .email-subject::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 22px;
+      background: linear-gradient(180deg, #6366F1, #D946EF);
+      margin-right: 12px;
+      border-radius: 4px;
+    }
+    
+    .sender-info {
+      padding: 25px 30px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #f0f0f0;
+      background-color: #ffffff;
+      position: relative;
+    }
+    
+    .decorative-dots {
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 5px;
+    }
+    
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #f0f0f0;
+    }
+    
+    .dot:nth-child(2) {
+      background-color: #e0e0e0;
+    }
+    
+    .dot:nth-child(3) {
+      background-color: #d0d0d0;
+    }
+    
+    .avatar {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      margin-right: 18px;
+      flex-shrink: 0;
+      overflow: hidden;
+      border: 3px solid white;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .sender-details {
+      flex-grow: 1;
+      position: relative;
+    }
+    
+    .sender-name {
+      font-weight: 600;
+      font-size: 17px;
+      color: #333;
+      margin: 0 0 6px 0;
+    }
+    
+    .sender-address {
+      color: #687286;
+      font-size: 14px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .sender-address::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #8B5CF6;
+      margin-right: 8px;
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+    
+    .recipient {
+      color: #687286;
+      font-size: 14px;
+      margin-top: 5px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+    }
+    
+    .recipient::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #D946EF;
+      margin-right: 8px;
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+    
+    .email-body {
+      padding: 35px 30px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+      background-color: #ffffff;
+      position: relative;
+      background-image: 
+        radial-gradient(circle at 5% 95%, rgba(99, 102, 241, 0.03) 0%, rgba(99, 102, 241, 0) 20%),
+        radial-gradient(circle at 95% 15%, rgba(217, 70, 239, 0.03) 0%, rgba(217, 70, 239, 0) 20%);
+    }
+    
+    .corner-decoration {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      opacity: 0.05;
+    }
+    
+    .top-right {
+      top: 0;
+      right: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100 0L100 100L0 100C55.2285 100 100 55.2285 100 0Z' fill='%238B5CF6'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    .bottom-left {
+      bottom: 0;
+      left: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100L0 0L100 0C44.7715 0 0 44.7715 0 100Z' fill='%236366F1'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    .email-signature {
+      padding: 20px 30px;
+      border-top: 1px solid #f0f0f0;
+      color: #687286;
+      font-size: 14px;
+      background-color: #fdfdfd;
+      font-style: italic;
+      position: relative;
+    }
+    
+    .signature-decoration {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 30px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      z-index: 1;
+    }
+    
+    .signature-decoration::before {
+      content: "";
+      width: 15px;
+      height: 2px;
+      background: linear-gradient(90deg, #6366F1, #D946EF);
+    }
+
+    .icon-mail {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      opacity: 0.8;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366F1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'%3E%3C/path%3E%3Cpolyline points='22,6 12,13 2,6'%3E%3C/polyline%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    /* Simple responsive adjustments */
+    @media (max-width: 768px) {
+      .email-container {
+        width: 95%;
+      }
+      
+      .email-header, .sender-info, .email-body, .email-signature {
+        padding: 20px;
+      }
+      
+      .email-subject {
+        font-size: 18px;
+      }
+      
+      .avatar {
+        width: 45px;
+        height: 45px;
+      }
+      
+      .decorative-dots {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="pattern-top"></div>
+    
+    <div class="email-header">
+      <div class="email-subject">
+        <span class="icon-mail"></span>
+        New Message From {{name}}
+      </div>
+    </div>
+    
+    <div class="sender-info">
+      <div class="avatar">
+        <img src="/api/placeholder/55/55" alt="{{name}}'s profile picture" />
+      </div>
+      <div class="sender-details">
+        <p class="sender-name">{{name}}</p>
+        <p class="sender-address">{{email}}</p>
+        <p class="recipient">To: me</p>
+      </div>
+      <div class="decorative-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+    
+    <div class="email-body">
+      <div class="corner-decoration top-right"></div>
+      <div class="corner-decoration bottom-left"></div>
+      {{message}}
+    </div>
+    
+    <div class="email-signature">
+      <div class="signature-decoration"></div>
+      — <br>
+      {{name}} <br>
+      Sent from my device
+    </div>
+  </div>
+</body>
+</html>
