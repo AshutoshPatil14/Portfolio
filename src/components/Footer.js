@@ -6,13 +6,13 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="copyright" align="center">
+        <div className="copyright">
           &copy; {currentYear} Ashutosh Patil. All Rights Reserved.
         </div>
-        {/* <div className="social-links" align="center">
+        <div className="social-links">
           <a href="https://github.com/AshutoshPatil14" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://linkedin.com/in/ashutosh-patil-556518191" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div> */}
+        </div>
       </div>
     </footer>
   );
