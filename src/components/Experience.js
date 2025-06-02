@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Experience = () => {
+const Experience = ({ id }) => {
   const certifications = [
     {
       id: 1,
@@ -71,7 +71,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="experience">
+    <section id={id} className="section experience">
       <h2>Professional Experience</h2>
       
       <div className="certifications">

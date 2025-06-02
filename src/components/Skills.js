@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Skills = () => {
+const Skills = ({ id }) => {
   const skillCategories = [
     {
       category: 'Data & Analytics',
@@ -17,7 +17,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="skills">
+    <section id={id} className="section skills">
       <h2>My Skills</h2>
       <div className="skills-container">
         {skillCategories.map((category, index) => (

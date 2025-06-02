@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-const Contact = () => {
+const Contact = ({ id }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -46,7 +46,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="contact">
+    <section id={id} className="section contact">
       <h2>Contact Me</h2>
       <div className="contact-container">
         <div className="contact-info">
@@ -55,15 +55,15 @@ const Contact = () => {
           <div className="contact-details">
             <div className="contact-item">
               <span className="contact-label">Email:</span>
-              <span>ashutosh.patil1409@gmail.com</span>
+              <span className="contact-type">ashutosh.patil1409@gmail.com</span>
             </div>
             <div className="contact-item">
               <span className="contact-label">Phone:</span>
-              <span>+91 91307 47809</span>
+              <span className="contact-type">+91 91307 47809</span>
             </div>
             <div className="contact-item">
               <span className="contact-label">Location:</span>
-              <span>Chembur, Mumbai</span>
+              <span className="contact-type">Chembur, Mumbai</span>
             </div>
           </div>
           <div className="social-links">

@@ -1,9 +1,9 @@
 import React from 'react';
 import MyImage from '../Profile.jpg';
 
-const About = () => {
+const About = ({ id }) => {
   return (
-    <section id="about" className="about">
+    <section id={id} className="section about">
       <h2>About Me</h2>
       <div className="about-content">
         <div className="about-image">

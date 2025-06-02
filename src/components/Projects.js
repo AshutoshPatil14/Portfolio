@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Projects = () => {
+const Projects = ({ id }) => {
   const projects = [
     {
       id: 1,
@@ -33,7 +33,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="projects">
+    <section id={id} className="section projects">
       <h2>My Projects</h2>
       <div className="projects-grid">
         {projects.map((project) => (

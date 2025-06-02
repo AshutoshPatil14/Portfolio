@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Education = () => {
+const Education = ({ id }) => {
   const educationHistory = [
     {
       id: 1,
@@ -26,7 +26,7 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="education">
+    <section id={id} className="section education">
       <h2>Education</h2>
       <div className="education-timeline">
         {educationHistory.map((edu) => (
